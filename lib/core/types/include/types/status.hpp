@@ -1,5 +1,5 @@
-#ifndef TYPES_H
-#define TYPES_H
+#ifndef TYPES_STATUS_H
+#define TYPES_STATUS_H
 
 #include <string>
 #include <string_view>
@@ -7,6 +7,7 @@
 
 namespace Types {
 /**
+ * @class Status
  * @brief Simple status class to represent success or error states.
  */
 class Status {
@@ -32,4 +33,4 @@ private:
 };
 } // namespace types
 
-#endif  // TYPES_H
+#endif  // TYPES_STATUS_H

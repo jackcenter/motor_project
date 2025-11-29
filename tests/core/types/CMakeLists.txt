@@ -1,4 +1,4 @@
 set(CURRENT_LIBRARY_NAME "types")
-set(TEST_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/tests/types)
+set(TEST_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/tests/core/types)
 
 add_project_gtest(${CMAKE_CURRENT_SOURCE_DIR} test_status ${CURRENT_LIBRARY_NAME})

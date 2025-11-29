@@ -22,7 +22,7 @@ jobs:
           sudo apt-get install -y cmake ninja-build
 
       - name: Configure
-        run: cmake -B build -G Ninja -DBUILD_TESTS=ON
+        run: cmake -B build -G Ninja -DBUILD_DOXYGEN=OFF -DBUILD_TESTS=ON
 
       - name: Build
         run: |
@@ -32,3 +32,30 @@ jobs:
         run: |
           ctest --output-on-failure
         working-directory: build
+  docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update 
+          sudo apt-get install -y doxygen graphviz cmake ninja-build libfmt-dev
+
+      - name: Configure
+        run: cmake -B build -G Ninja -DBUILD_DOXYGEN=ON -DBUILD_TESTS=OFF
+
+      - name: Build Docs
+        run: |
+          cmake --build build --target docs
+
+      - name: Deploy docs to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_branch: gh-pages
+          publish_dir: build/docs/
