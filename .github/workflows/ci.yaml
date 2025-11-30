@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update 
-          sudo apt-get install -y cmake ninja-build
+          sudo apt-get install -y cmake ninja-build libfmt-dev
 
       - name: Configure
         run: cmake -B build -G Ninja -DBUILD_DOXYGEN=OFF -DBUILD_TESTS=ON
