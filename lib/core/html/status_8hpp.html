@@ -75,25 +75,32 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">status.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;string&gt;</code><br />
+
+<p>Declaration of the Status type used for error reporting.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;fmt/format.h&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 <code>#include &lt;string_view&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for status.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="status_8hpp__incl.png" border="0" usemap="#a_2home_2runner_2work_2motor__project_2motor__project_2lib_2core_2types_2include_2types_2status_8hpp" alt=""/></div>
 <map name="a_2home_2runner_2work_2motor__project_2motor__project_2lib_2core_2types_2include_2types_2status_8hpp" id="a_2home_2runner_2work_2motor__project_2motor__project_2lib_2core_2types_2include_2types_2status_8hpp">
-<area shape="rect" title=" " alt="" coords="43,5,231,75"/>
-<area shape="rect" title=" " alt="" coords="5,123,64,148"/>
-<area shape="poly" title=" " alt="" coords="102,77,60,115,56,111,98,73"/>
-<area shape="rect" title=" " alt="" coords="89,123,186,148"/>
-<area shape="poly" title=" " alt="" coords="140,75,140,109,135,109,135,75"/>
-<area shape="rect" title=" " alt="" coords="211,123,291,148"/>
-<area shape="poly" title=" " alt="" coords="180,73,227,111,224,116,177,77"/>
+<area shape="rect" title="Declaration of the Status type used for error reporting." alt="" coords="121,5,309,75"/>
+<area shape="rect" title=" " alt="" coords="5,123,85,148"/>
+<area shape="poly" title=" " alt="" coords="155,77,80,118,77,113,152,72"/>
+<area shape="rect" title=" " alt="" coords="110,123,215,148"/>
+<area shape="poly" title=" " alt="" coords="198,76,178,112,174,109,194,73"/>
+<area shape="rect" title=" " alt="" coords="239,123,297,148"/>
+<area shape="poly" title=" " alt="" coords="236,73,257,109,252,112,232,76"/>
+<area shape="rect" title=" " alt="" coords="322,123,419,148"/>
+<area shape="poly" title=" " alt="" coords="272,72,341,113,338,118,270,77"/>
 </map>
 </div>
 </div>
@@ -102,15 +109,25 @@ Include dependency graph for status.hpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTypes_1_1Status.html">Types::Status</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple status class to represent success or error states.  <a href="classTypes_1_1Status.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents success or error states.  <a href="classTypes_1_1Status.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceTypes" id="r_namespaceTypes"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTypes.html">Types</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a6082507a6f378b96fceeb05c56b2ca70" id="r_a6082507a6f378b96fceeb05c56b2ca70"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTypes.html#a6082507a6f378b96fceeb05c56b2ca70">Types::operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classTypes_1_1Status.html">Status</a> &amp;status)</td></tr>
+<tr class="memdesc:a6082507a6f378b96fceeb05c56b2ca70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the <a class="el" href="classTypes_1_1Status.html" title="Represents success or error states.">Status</a> code and message to the output stream.  <br /></td></tr>
+<tr class="separator:a6082507a6f378b96fceeb05c56b2ca70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Declaration of the Status type used for error reporting. </p>
+<dl class="section author"><dt>Author</dt><dd>Jack Center </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>November 29th, 2025 </dd></dl>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
