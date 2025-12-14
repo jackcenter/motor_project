@@ -49,7 +49,7 @@ jobs:
       - name: Configure
         run: cmake -B build -G Ninja -DBUILD_DOXYGEN=ON -DBUILD_TESTS=OFF
 
-      - name: Build Docs
+      - name: Build
         run: |
           cmake --build build --target docs
 
@@ -59,3 +59,28 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_branch: gh-pages
           publish_dir: build/docs/
+  firmware:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-arm-none-eabi binutils-arm-none-eabi cmake ninja-build
+
+      - name: Configure
+        run: cmake -S firmware/blink -B build-firmware -G Ninja -DCMAKE_TOOLCHAIN_FILE=${GITHUB_WORKSPACE}/cmake/arm-gcc-toolchain.cmake
+
+      - name: Build
+        run: cmake --build build-firmware --target blink
+
+      - name: Show firmware size
+        run: |
+          arm-none-eabi-size build-firmware/blink.elf
+          ls -lh build-firmware/blink.bin
+          ls -lh build-firmware/blink.hex
