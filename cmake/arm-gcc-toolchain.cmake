@@ -12,7 +12,7 @@ set(CMAKE_SIZE         ${TOOLCHAIN_PREFIX}-size)
 
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 
-set(CMAKE_C_FLAGS_INIT "-ffunction-sections -fdata-sections")
-set(CMAKE_CXX_FLAGS_INIT "-ffunction-sections -fdata-sections")
+set(CMAKE_C_FLAGS_INIT "-mthumb -ffunction-sections -fdata-sections")
+set(CMAKE_CXX_FLAGS_INIT "${CMAKE_C_FLAGS_INIT}")
 
 set(CMAKE_EXE_LINKER_FLAGS_INIT "-Wl,--gc-sections")

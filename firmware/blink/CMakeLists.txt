@@ -2,8 +2,12 @@ cmake_minimum_required(VERSION 3.20)
 
 project(blink C ASM)
 
-set (CMAKE_C_FLAGS "-mthumb")  # Requred for startup assembly because M0 is thumb-only 
 set (LINKER_SCRIPT "${CMAKE_CURRENT_SOURCE_DIR}/linker/STM32F091RCTX_FLASH.ld")
+
+add_subdirectory(
+    ${CMAKE_CURRENT_LIST_DIR}/../lib/gpio
+    ${CMAKE_BINARY_DIR}/gpio
+)
 
 add_executable(${PROJECT_NAME}
 	startup/startup_stm32f091rctx.s
@@ -19,6 +23,11 @@ target_compile_options(blink PRIVATE -O0
     -Werror
     -ffunction-sections
     -fdata-sections
+)
+
+target_link_libraries(blink
+    PRIVATE
+        gpio
 )
 
 target_link_options(${PROJECT_NAME} PRIVATE

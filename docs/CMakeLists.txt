@@ -12,6 +12,13 @@ add_doxygen_target(
     "${CMAKE_BINARY_DIR}/docs/lib/core"
 )
 
+add_doxygen_target(
+    firmware_gpio_lib_docs
+    "GPIO Library"
+    "${CMAKE_SOURCE_DIR}/firmware/lib/gpio"
+    "${CMAKE_BINARY_DIR}/docs/firmware/lib/gpio"
+)
+
 # ------------------------
 # Bridge page
 # ------------------------
@@ -24,6 +31,7 @@ set(GITHUB_REPO_URL "https://github.com/jackcenter/motor_project")
 set(DOC_MODULES "")
 string(APPEND DOC_MODULES "<ul>\n")
 string(APPEND DOC_MODULES "<li><a href=\"lib/core/html/index.html\">Core Library</a></li>\n")
+string(APPEND DOC_MODULES "<li><a href=\"firmware/lib/gpio/html/index.html\">GPIO Library</a></li>\n")
 string(APPEND DOC_MODULES "</ul>\n")
 
 set(PROJECT_LINKS "")
@@ -38,6 +46,6 @@ configure_file(
 )
 
 add_custom_target(docs ALL
-    DEPENDS core_lib_docs
+    DEPENDS core_lib_docs firmware_gpio_lib_docs
     COMMENT "Generating documentation landing page"
 )
