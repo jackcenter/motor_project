@@ -1,0 +1,7 @@
+PROJECT_NAME           = "GPIO Library"
+INPUT                  = "/home/runner/work/motor_project/motor_project/firmware/lib/gpio"
+OUTPUT_DIRECTORY       = "/home/runner/work/motor_project/motor_project/build/docs/firmware/lib/gpio"
+STRIP_FROM_PATH        = "/home/runner/work/motor_project/motor_project/docs"
+GENERATE_LATEX         = NO
+RECURSIVE              = YES
+EXTRACT_ALL            = YES
