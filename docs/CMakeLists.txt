@@ -45,6 +45,12 @@ configure_file(
     @ONLY
 )
 
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/style.css
+    ${CMAKE_BINARY_DIR}/docs/style.css
+    COPYONLY
+)
+
 add_custom_target(docs ALL
     DEPENDS core_lib_docs firmware_gpio_lib_docs
     COMMENT "Generating documentation landing page"
